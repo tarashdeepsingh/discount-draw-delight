@@ -52,16 +52,17 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				icecream: {
-					pink: '#FFDEE2',
-					blue: '#D3E4FD',
-					vanilla: '#FEF7CD',
-					chocolate: '#8B4513',
-					mint: '#98D8C8',
+				coffee: {
+					dark: '#5A3921',
+					medium: '#8B5A2B',
+					light: '#C39B77',
+					cream: '#F2E2CE',
+					caramel: '#D4A76A',
 				},
 			},
 			fontFamily: {
 				sans: ['Inter', 'sans-serif'],
+				display: ['Playfair Display', 'serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -93,20 +94,19 @@ export default {
 					'0%': { opacity: '1' },
 					'100%': { opacity: '0' }
 				},
+				'steam': {
+					'0%': { transform: 'translateY(0) scale(1)', opacity: '0' },
+					'50%': { opacity: '0.8' },
+					'100%': { transform: 'translateY(-20px) scale(1.5)', opacity: '0' }
+				},
 				'scale': {
 					'0%': { transform: 'scale(1)' },
 					'50%': { transform: 'scale(1.1)' },
 					'100%': { transform: 'scale(1)' }
 				},
-				'scoop': {
-					'0%': { transform: 'translateY(0) rotate(0)' },
-					'50%': { transform: 'translateY(-15px) rotate(5deg)' },
-					'100%': { transform: 'translateY(0) rotate(0)' }
-				},
-				'drip': {
-					'0%': { height: '0', opacity: '0' },
-					'50%': { height: '15px', opacity: '1' },
-					'100%': { height: '0', opacity: '0' }
+				'pulse': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.5' }
 				}
 			},
 			animation: {
@@ -116,12 +116,12 @@ export default {
 				'bounce': 'bounce 0.6s ease-in-out',
 				'fade-in': 'fade-in 0.4s ease-in-out',
 				'fade-out': 'fade-out 0.4s ease-in-out',
+				'steam': 'steam 2s ease-in-out infinite',
 				'scale': 'scale 0.3s ease-in-out',
-				'scoop': 'scoop 1s ease-in-out infinite',
-				'drip': 'drip 2s ease-in-out infinite',
+				'pulse': 'pulse 1.5s ease-in-out infinite',
 			},
 			backgroundImage: {
-				'waffle-pattern': "url(\"data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h20v20H0V0zm20 20h20v20H20V20z' fill='%23f9e8d2' fill-opacity='0.2' fill-rule='evenodd'/%3E%3C/svg%3E\")",
+				'coffee-pattern': "url(\"data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h20v20H0V0zm20 20h20v20H20V20z' fill='%238B5A2B' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E\")",
 			},
 		}
 	},

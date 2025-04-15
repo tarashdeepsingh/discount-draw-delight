@@ -5,8 +5,8 @@ import DiscountDisplay from '@/components/DiscountDisplay';
 import ResultDisplay from '@/components/ResultDisplay';
 import LoadingSpinner from '@/components/LoadingSpinner';
 import { calculateDiscount } from '@/services/discountService';
-import { useToast } from "@/components/ui/use-toast";
-import { IceCream } from 'lucide-react';
+import { useToast } from "@/hooks/use-toast";
+import { Coffee } from 'lucide-react';
 
 const Index = () => {
   const [multiplier, setMultiplier] = useState(1.0);
@@ -54,10 +54,10 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-4 bg-gradient-to-b from-pink-50 to-blue-50">
-      <div className="w-full max-w-md mx-auto bg-white/90 backdrop-blur-sm shadow-xl rounded-3xl p-6 md:p-8 border border-pink-100">
+    <div className="min-h-screen flex flex-col items-center justify-center p-4 bg-gradient-to-b from-amber-50 to-amber-100">
+      <div className="w-full max-w-md mx-auto bg-white/90 backdrop-blur-sm shadow-xl rounded-xl p-6 md:p-8 border border-amber-200">
         <div className="flex justify-center mb-4">
-          <IceCream className="h-10 w-10 text-primary" />
+          <Coffee className="h-10 w-10 text-amber-800" />
         </div>
         
         <DiscountDisplay 
@@ -83,18 +83,18 @@ const Index = () => {
             {isLoading ? (
               <LoadingSpinner />
             ) : (
-              "Get Your Ice Cream Discount!"
+              "Get Your Coffee Reward!"
             )}
           </button>
           
-          <p className="text-sm text-center px-6 py-3 bg-icecream-blue rounded-lg text-gray-600">
-            Higher multipliers are tastier but harder to get! 🍦
+          <p className="text-sm text-center px-6 py-3 bg-amber-100 rounded-lg text-amber-800">
+            Higher multipliers are bolder brews but harder to get! ☕
           </p>
         </div>
       </div>
       
-      <div className="mt-6 text-center text-gray-500 text-sm">
-        © {new Date().getFullYear()} MB's Connection • Your Sweet Discount Shop
+      <div className="mt-6 text-center text-amber-800 text-sm">
+        © {new Date().getFullYear()} Brew Bro • Your Premium Coffee Experience
       </div>
       
       <ResultDisplay

@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { cn } from '@/lib/utils';
-import { IceCream } from 'lucide-react';
+import { Coffee } from 'lucide-react';
 
 interface DiscountDisplayProps {
   value: number;
@@ -20,29 +20,29 @@ const DiscountDisplay: React.FC<DiscountDisplayProps> = ({
     const max = 2.0;
     const normalizedValue = (value - min) / (max - min); // 0 to 1
     
-    if (normalizedValue < 0.3) return 'bg-icecream-vanilla';
-    if (normalizedValue < 0.6) return 'bg-icecream-mint';
-    return 'bg-icecream-pink';
+    if (normalizedValue < 0.3) return 'bg-amber-100';
+    if (normalizedValue < 0.6) return 'bg-amber-200';
+    return 'bg-amber-300';
   };
 
   return (
     <div className={cn(
-      "text-center py-6 transition-all duration-300 rounded-3xl bg-white/80 backdrop-blur-sm shadow-lg border border-white/50",
+      "text-center py-6 transition-all duration-300 rounded-xl bg-white/90 backdrop-blur-sm shadow-lg border border-amber-100",
       isAnimating && "animate-scale",
       className
     )}>
       <div className="flex flex-col items-center">
-        <h1 className="text-2xl md:text-3xl font-bold text-pink-600 mb-2">MB's Connection</h1>
-        <h2 className="text-xl font-bold text-gray-700">Ice Cream Discount</h2>
+        <h1 className="text-2xl md:text-3xl font-bold text-amber-800 mb-2">Brew Bro</h1>
+        <h2 className="text-xl font-bold text-gray-700">Coffee Loyalty Discount</h2>
         
         <div className="my-6 relative">
-          <div className="ice-cream-cone">
+          <div className="coffee-cup">
             <div className={cn(
-              "ice-cream-scoop w-16 h-16 mx-auto", 
+              "coffee-liquid w-16 h-16 mx-auto rounded-full", 
               getScaleColors(value),
-              isAnimating && "animate-scoop"
+              isAnimating && "animate-bounce"
             )}>
-              <div className="ice-cream-drip"></div>
+              <div className="coffee-steam"></div>
             </div>
           </div>
         </div>
@@ -56,9 +56,9 @@ const DiscountDisplay: React.FC<DiscountDisplayProps> = ({
         </div>
         
         <div className="flex items-center justify-center mt-4 gap-2">
-          <IceCream className="h-5 w-5 text-primary" />
+          <Coffee className="h-5 w-5 text-amber-800" />
           <p className="text-gray-600 font-medium">
-            Choose your discount scoop and try your luck!
+            Choose your loyalty multiplier and brew some rewards!
           </p>
         </div>
       </div>

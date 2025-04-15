@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { cn } from '@/lib/utils';
-import { Loader } from 'lucide-react';
+import { IceCream } from 'lucide-react';
 
 interface LoadingSpinnerProps {
   className?: string;
@@ -10,7 +10,8 @@ interface LoadingSpinnerProps {
 const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({ className }) => {
   return (
     <div className={cn("flex justify-center items-center", className)}>
-      <Loader className="animate-spin text-primary" size={24} />
+      <IceCream className="animate-scoop text-primary" size={24} />
+      <span className="ml-2 text-primary-foreground">Loading...</span>
     </div>
   );
 };

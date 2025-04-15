@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -53,6 +52,13 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				icecream: {
+					pink: '#FFDEE2',
+					blue: '#D3E4FD',
+					vanilla: '#FEF7CD',
+					chocolate: '#8B4513',
+					mint: '#98D8C8',
+				},
 			},
 			fontFamily: {
 				sans: ['Inter', 'sans-serif'],
@@ -91,6 +97,16 @@ export default {
 					'0%': { transform: 'scale(1)' },
 					'50%': { transform: 'scale(1.1)' },
 					'100%': { transform: 'scale(1)' }
+				},
+				'scoop': {
+					'0%': { transform: 'translateY(0) rotate(0)' },
+					'50%': { transform: 'translateY(-15px) rotate(5deg)' },
+					'100%': { transform: 'translateY(0) rotate(0)' }
+				},
+				'drip': {
+					'0%': { height: '0', opacity: '0' },
+					'50%': { height: '15px', opacity: '1' },
+					'100%': { height: '0', opacity: '0' }
 				}
 			},
 			animation: {
@@ -100,8 +116,13 @@ export default {
 				'bounce': 'bounce 0.6s ease-in-out',
 				'fade-in': 'fade-in 0.4s ease-in-out',
 				'fade-out': 'fade-out 0.4s ease-in-out',
-				'scale': 'scale 0.3s ease-in-out'
-			}
+				'scale': 'scale 0.3s ease-in-out',
+				'scoop': 'scoop 1s ease-in-out infinite',
+				'drip': 'drip 2s ease-in-out infinite',
+			},
+			backgroundImage: {
+				'waffle-pattern': "url(\"data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h20v20H0V0zm20 20h20v20H20V20z' fill='%23f9e8d2' fill-opacity='0.2' fill-rule='evenodd'/%3E%3C/svg%3E\")",
+			},
 		}
 	},
 	plugins: [require("tailwindcss-animate")],

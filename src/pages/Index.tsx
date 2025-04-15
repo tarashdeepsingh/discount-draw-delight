@@ -6,6 +6,7 @@ import ResultDisplay from '@/components/ResultDisplay';
 import LoadingSpinner from '@/components/LoadingSpinner';
 import { calculateDiscount } from '@/services/discountService';
 import { useToast } from "@/components/ui/use-toast";
+import { IceCream } from 'lucide-react';
 
 const Index = () => {
   const [multiplier, setMultiplier] = useState(1.0);
@@ -53,9 +54,11 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-background p-4">
-      <div className="w-full max-w-md mx-auto bg-card shadow-lg rounded-2xl p-6 md:p-8">
-        <h1 className="text-3xl font-bold text-center mb-8">Discount Draw</h1>
+    <div className="min-h-screen flex flex-col items-center justify-center p-4 bg-gradient-to-b from-pink-50 to-blue-50">
+      <div className="w-full max-w-md mx-auto bg-white/90 backdrop-blur-sm shadow-xl rounded-3xl p-6 md:p-8 border border-pink-100">
+        <div className="flex justify-center mb-4">
+          <IceCream className="h-10 w-10 text-primary" />
+        </div>
         
         <DiscountDisplay 
           value={multiplier} 
@@ -75,19 +78,23 @@ const Index = () => {
           <button
             onClick={handleGetDiscount}
             disabled={isLoading}
-            className="w-full py-4 bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl font-medium text-lg transition-all duration-200 disabled:opacity-70 disabled:cursor-not-allowed flex justify-center items-center"
+            className="w-full py-4 bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl font-medium text-lg transition-all duration-200 disabled:opacity-70 disabled:cursor-not-allowed flex justify-center items-center shadow-lg hover:shadow-xl transform hover:-translate-y-1"
           >
             {isLoading ? (
               <LoadingSpinner />
             ) : (
-              "Get Discount"
+              "Get Your Ice Cream Discount!"
             )}
           </button>
           
-          <p className="text-sm text-muted-foreground text-center">
-            Higher multipliers have a lower chance of success, but offer bigger rewards!
+          <p className="text-sm text-center px-6 py-3 bg-icecream-blue rounded-lg text-gray-600">
+            Higher multipliers are tastier but harder to get! 🍦
           </p>
         </div>
+      </div>
+      
+      <div className="mt-6 text-center text-gray-500 text-sm">
+        © {new Date().getFullYear()} MB's Connection • Your Sweet Discount Shop
       </div>
       
       <ResultDisplay
